@@ -94,5 +94,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="image\OIP.jpg" />
+    <Resource Include="image\OIP1.jpg" />
+    <Resource Include="image\OIP2.jpg" />
+    <Resource Include="image\OIP3.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
