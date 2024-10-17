@@ -6,6 +6,117 @@
         xmlns:local="clr-namespace:Laba"
         mc:Ignorable="d"
         Title="Fresh Bar" Height="450" Width="800" MinHeight="300" MinWidth="400">
+    <Window.Resources>
+
+        <SolidColorBrush x:Key="ButtonBackgroundColor_Vishnya" Color="DarkRed" />
+        <SolidColorBrush x:Key="ButtonBackgroundColor_Lime" Color="Lime" />
+        <SolidColorBrush x:Key="ButtonBackgroundColor_DarkGreen" Color="DarkGreen" />
+        <SolidColorBrush x:Key="ButtonBackgroundColor_Blue" Color="SteelBlue" />
+        <SolidColorBrush x:Key="ButtonBackgroundColor_LG" Color="LightGreen" />
+        <SolidColorBrush x:Key="ButtonBackgroundColor_Red" Color="red" />
+
+        <Style  TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Yu Gothic UI Semibol" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+
+        <Style TargetType="Viewbox">
+            <Setter Property="Margin" Value="2,2,2,2" />
+        </Style>
+
+        <Style TargetType="Button" x:Key="ContentTextButtonStyle1">
+            <Setter Property="FontFamily" Value="Yu Gothic UI Semibold"/>
+            <Setter Property="Margin" Value="5,5,5,5" />
+            <Setter Property="Foreground" Value="White" />
+
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border  BorderThickness="1" CornerRadius="5" Background="{StaticResource ButtonBackgroundColor_DarkGreen}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="ContentTextButtonStyle2">
+            <Setter Property="FontFamily" Value="Yu Gothic UI Semibold" />
+            <Setter Property="Margin" Value="5,5,5,5" />
+            <Setter Property="Foreground" Value="White" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderThickness="1" CornerRadius="5" Background="{StaticResource ButtonBackgroundColor_Blue}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Button" x:Key="ContentTextButtonStyle3">
+            <Setter Property="FontFamily" Value="Yu Gothic UI Semibold" />
+            <Setter Property="Margin" Value="5,5,5,5" />
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border  BorderThickness="1" CornerRadius="5" Background="{StaticResource ButtonBackgroundColor_Lime}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="ContentTextButtonStyle4">
+            <Setter Property="FontFamily" Value="Yu Gothic UI Semibold" />
+            <Setter Property="Margin" Value="5,5,5,5" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border  BorderThickness="1" CornerRadius="5" Background="{StaticResource ButtonBackgroundColor_Vishnya}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="Pause">
+            <Setter Property="FontFamily" Value="Yu Gothic UI Semibold" />
+            <Setter Property="Margin" Value="5,5,5,5" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border  BorderThickness="1" CornerRadius="3" Background="{StaticResource ButtonBackgroundColor_Red}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="Play">
+            <Setter Property="FontFamily" Value="Yu Gothic UI Semibold" />
+            <Setter Property="Margin" Value="5,5,5,5" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border  BorderThickness="1" CornerRadius="3" Background="{StaticResource ButtonBackgroundColor_LG}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
     <Grid ShowGridLines="False">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -18,12 +129,12 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
-            
+
         </Grid.ColumnDefinitions>
         <Viewbox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Center">
             <TextBlock Text='Fresh Bar' FontSize="20" FontFamily="Helvetica"/>
         </Viewbox>
-        
+
         <Button x:Name="pictureBut1" Grid.Column="0" Grid.Row="1" Background="White" Margin="5,5,5,5">
             <Image x:Name="drink1" Source="/image/OIP.jpg"/>
         </Button>
@@ -52,19 +163,19 @@
             </Viewbox>
         </Border>
 
-        <Button x:Name="Fresh_Bar_content1" Grid.Column="0" Grid.Row="2" Content="Состав" Margin="5,0,5,5" ></Button >
+        <Button x:Name="Fresh_Bar_content1" Style="{StaticResource ContentTextButtonStyle1}" Grid.Column="0" Grid.Row="2" Content="Состав" Margin="5,0,5,5" ></Button >
 
-        <Button x:Name="Fresh_Bar_content2" Grid.Column="1" Grid.Row="2" Content="Состав" Margin="5,0,5,5" ></Button>
+        <Button x:Name="Fresh_Bar_content2" Style="{StaticResource ContentTextButtonStyle2}" Grid.Column="1" Grid.Row="2" Content="Состав" Margin="5,0,5,5" ></Button>
 
-        <Button x:Name="Fresh_Bar_content3" Grid.Column="2" Grid.Row="2" Content="Состав" Margin="5,0,5,5" ></Button>
+        <Button x:Name="Fresh_Bar_content3" Style="{StaticResource ContentTextButtonStyle3}" Grid.Column="2" Grid.Row="2" Content="Состав" Margin="5,0,5,5" ></Button>
 
-        <Button x:Name="Fresh_Bar_content4" Grid.Column="3" Grid.Row="2" Content="Состав" Margin="5,0,5,5" ></Button>
+        <Button x:Name="Fresh_Bar_content4" Style="{StaticResource ContentTextButtonStyle4}" Grid.Column="3" Grid.Row="2" Content="Состав" Margin="5,0,5,5" ></Button>
         <Border  Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center">
             <Viewbox>
                 <StackPanel Margin="5,0,5,0">
-            <Button x:Name="play"  Content="Старт" Margin="5,5,5,5" ></Button>
-            <Button x:Name="pause"  Content="Пауза" Margin="5,0,5,5" ></Button>
-            </StackPanel>
+                    <Button x:Name="play" Style="{StaticResource Play}" Content="Старт" Margin="5,5,5,5" ></Button>
+                    <Button x:Name="pause" Style="{StaticResource Pause}" Content="Пауза" Margin="5,0,5,5" ></Button>
+                </StackPanel>
             </Viewbox>
         </Border>
     </Grid>
