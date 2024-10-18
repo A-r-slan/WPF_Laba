@@ -14,6 +14,12 @@
         <SolidColorBrush x:Key="ButtonBackgroundColor_Blue" Color="SteelBlue" />
         <SolidColorBrush x:Key="ButtonBackgroundColor_LG" Color="LightGreen" />
         <SolidColorBrush x:Key="ButtonBackgroundColor_Red" Color="red" />
+        <LinearGradientBrush x:Key="GradientStyleRectangle">
+            <GradientStop Color="Red" Offset="0"/>
+            <GradientStop Color="Black" Offset="0.5"/>
+            <GradientStop Color="Azure" Offset="1"/>
+        </LinearGradientBrush>
+
 
         <Style  TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Yu Gothic UI Semibol" />
@@ -101,6 +107,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
         <Style TargetType="Button" x:Key="Play">
             <Setter Property="FontFamily" Value="Yu Gothic UI Semibold" />
             <Setter Property="Margin" Value="5,5,5,5" />
@@ -115,8 +122,9 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
     </Window.Resources>
-    
+
     <Grid ShowGridLines="False">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -170,6 +178,7 @@
         <Button x:Name="Fresh_Bar_content3" Style="{StaticResource ContentTextButtonStyle3}" Grid.Column="2" Grid.Row="2" Content="Состав" Margin="5,0,5,5" ></Button>
 
         <Button x:Name="Fresh_Bar_content4" Style="{StaticResource ContentTextButtonStyle4}" Grid.Column="3" Grid.Row="2" Content="Состав" Margin="5,0,5,5" ></Button>
+        <Rectangle Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2" Stroke="Black" VerticalAlignment="Top"  Stretch="UniformToFill" Fill="{StaticResource GradientStyleRectangle}" Height="88" Margin="0,43,0,0" Grid.RowSpan="2"/>
         <Border  Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center">
             <Viewbox>
                 <StackPanel Margin="5,0,5,0">
